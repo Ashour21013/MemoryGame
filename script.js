@@ -31,21 +31,29 @@ function initGame() {
   let button = (document.getElementById('completed').style.display = 'none');
   shuffleArray(symbols);
 
+  const gameBoard = document.getElementById('game-board');
+  gameBoard.innerHTML = '';
+  symbols.forEach((symbol) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.dataset.symbol = symbol;
+    card.textContent = '?';
+    card.addEventListener('click', flipCard);
+    card.classList.remove('flipped', 'matched');
+    document.getElementById('completion-message').textContent = '';
+
+    gameBoard.appendChild(card);
+  });
+
   //Werte übergeben
-  for (let i = 1; i <= 16; i++) {
-    const card = document.getElementById('card' + i);
-    card.textContent = '?'; // Set back to '?'
-    card.dataset.symbol = symbols[i - 1]; // Store the symbol in a custom data attribute
-    card.classList.remove('flipped', 'matched'); // Reset card state
-  }
+
   flippedCards = [];
   matchedCards = 0;
-  document.getElementById('completion-message').textContent = '';
 }
 
 // Function to flip a card
-function flipCard(cardId) {
-  const card = document.getElementById(cardId);
+function flipCard(event) {
+  const card = event.target;
   if (card.textContent === '?') {
     // Verhindern das mehr als 2 karten geklickt werden
     if (flippedCards.length == 2) {
