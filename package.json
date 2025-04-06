@@ -1,0 +1,11 @@
+{
+  "name": "memorygame",
+  "version": "1.0.0",
+  "description": "memorygame with typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -104,7 +104,7 @@ function checkGameCompletion() {
 }
 
 // Reset the game
-function resetGame() {
+function resetGame() { 
   initGame(); // Reinitialize the game with shuffled cards
 }
 

@@ -17,6 +17,13 @@
     <div id="game-board" class="game-board"></div>
     <p id="completion-message" class="text-center mt-4 text-light"></p>
 
+    <div class="container text-center" id="setupForm">
+      <input type="text" id="player1" placeholder="Spieler 1 Name" />
+      <input type="text" id="player2" placeholder="Spieler 2 Name" />
+      <input type="number" id="numPairs" placeholder="Cards" min="2" max="12" />
+      <button id="startBtn" class="btn btn-primary">Spiel starten</button>
+    </div>
+
     <div class="mt-4 d-flex justify-content-center" style="text-align: center">
       <button
         class="btn btn-danger"
@@ -27,6 +34,7 @@
         Start New Round
       </button>
     </div>
-    <script src="script.js"></script>
+    <div class="text-white text-center" id="scoreboard"></div>
+    <script type="module" src="./dist/index.js"></script>
   </body>
 </html>
